@@ -5,34 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e37cdde8ba.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/index.css"
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
     <title>Simple | La 'To Do List' que organiza tu vida</title>
 </head>
 <body>
     <header>
         <div class="container-menu">
             <a href="#" class="logo"><h1>Simple<i class="fa-regular fa-hourglass"></i></h1></a>
+        
+            <nav class="navbar">
+                <input type "checkbox" id="navmenu">
+                <label for="navmenu" class="btn-nav">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <ul class="list-menu">
+                    <li><a href="mailto: apoyotodolist@simple.com">Contacto</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Cerrar Sesión<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="navbar">
-            <input type "checkbox" id="navmenu">
-            <label for="navmenu" class="btn-nav">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul class="list-menu">
-                <li><a href="mailto: apoyotodolist@simple.com">Contacto</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Cerrar Sesión<i class="fa-solid fa-right-from-bracket"></i></a></li>
-             </ul>
-        </nav>
-        <div class="to-doapp">
+    </header>    
+    <div class="to-doapp">
             <h3>¿Cuál es tu próximo objetivo?</h3>
             <div id="addtask">
                 <span>Añade tu tarea</span>
                 <i class="fa-regular fa-square-plus"></i>
             </div>
             <h4>Metas</h4>
-        </div>
-    </header>
+    </div>
+    
     <footer>
         &copy; Copyright - 2023 Emily Paulin 
     </footer>

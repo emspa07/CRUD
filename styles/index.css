@@ -1,0 +1,34 @@
+header{
+    width: 100%;
+    height: auto;
+    padding: 0.5 0;
+    border-bottom: 1px solid rgba(28, 35, 40, 0.322);
+    box-shadow: 0.15em 0.5em 1em rgba(31, 31, 31, 0.353);
+}
+header .container-menu {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    font-family: 'Aboreto', cursive;
+    color:#6A85B6;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+header .container-menu nav a {
+    padding: 0 0.5rem;
+    color: #6E45E2;
+    text-decoration: none;
+    font-family: 'Aboreto', cursive;
+    font-size: 1rem;
+}
+header .list-menu li {
+    display: inline;
+
+}
+header .navbar input, label{
+    display: none;
+}
