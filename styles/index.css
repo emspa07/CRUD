@@ -1,9 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 header{
     width: 100%;
     height: auto;
-    padding: 0.5 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid rgba(28, 35, 40, 0.322);
-    box-shadow: 0.15em 0.5em 1em rgba(31, 31, 31, 0.353);
+    background-color: rgb(239, 235, 243);
 }
 header .container-menu {
     max-width: 80%;
@@ -16,14 +21,14 @@ header .logo {
     font-family: 'Aboreto', cursive;
     color:#6A85B6;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 16px;
 }
 header .container-menu nav a {
     padding: 0 0.5rem;
     color: #6E45E2;
     text-decoration: none;
     font-family: 'Aboreto', cursive;
-    font-size: 1rem;
+    font-size: 15px;
 }
 header .list-menu li {
     display: inline;
@@ -31,4 +36,37 @@ header .list-menu li {
 }
 header .navbar input, label{
     display: none;
+}
+/* responsive media*/
+@media (min-width:240px) and (max-width:720px){
+    header .container-menu{
+        max-width: 90%;
+    }
+    header .list-menu{
+        display: none;
+        top: 3.2 rem;
+        right: 0;
+        position:absolute;
+        z-index: 1;
+    }
+    header .list-menu li {
+        padding: 1.1rem 1rem;
+    }
+    header #navmenu:checked~.list-menu {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        justify-content: start;
+    }
+    header .container-menu .btn-nav{
+        display: flex;
+        font-size: 1rem;
+        user-select: none;
+        cursor:pointer;
+    }
+    header .logo{
+        font-size: 12px;
+    }
 }
