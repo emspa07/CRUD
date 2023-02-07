@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #e5e5e5;
+}
 header{
     width: 100%;
     height: auto;
@@ -36,6 +39,51 @@ header .list-menu li {
 }
 header .navbar input, label{
     display: none;
+}
+main{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+main .to-doapp{
+    width: 70%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    padding: 1rem;
+    border: 5px solid violet;
+    border-radius: 8px;
+    background-color: white;
+} 
+#addtask{
+    display: flex;
+    background-color: violet;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fa-square-plus{
+    background-color: rgb(225, 170, 225);
+    padding: 4px;
+    border-radius: 4px;
+}
+#metas{
+    display: grid;
+    gap: 14px;
+}
+#metas div{
+    background-color:rgb(225, 170, 225);
+    border: 3px solid   rgb(190, 166, 190);
+    padding: 5px;
+    border-radius: 6px;
+    display: grid;
+    gap: 4px;
 }
 /* responsive media*/
 @media (min-width:240px) and (max-width:720px){
