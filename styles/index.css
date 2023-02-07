@@ -102,6 +102,9 @@ main .text-task{
     gap:1rem;
     cursor: pointer;
 }
+#message{
+    color: red;
+}
 /* responsive media*/
 @media (min-width:240px) and (max-width:720px){
     header .container-menu{
