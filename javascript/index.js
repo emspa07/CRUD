@@ -13,8 +13,8 @@ form.addEventListener('submit', (evt)=>{
 
 let formValidation = ()=>{
   if(nombreInput.value === ""){
-    console.log('invalid')
     message.innerHTML = "Todos los campos son obligatorios"
+    console.log('invalid')
   }
   else{
     console.log('valid')
@@ -24,38 +24,50 @@ let formValidation = ()=>{
     agregar.click()
 
 
-    (() =>{
+    (() => {
       agregar.setAttribute("data-bs-dismiss", "")
     })()
 
   }
 }
 
-let data = {}
+let data = []
 
 let acceptData = () => {
-  data["text"] = nombreInput.value
-  data["date"] = fechaInput.value
-  data["description"] = textareaDescrip.value 
+  data.push({
+  text:nombreInput.value,
+  date: fechaInput.value,
+  description: textareaDescrip.value, 
+  })
+
+  localStorage.setItem("data", JSON.stringify(data))
+  
+  console.log(data)
 
   createMetas()
 }
 
-let createMetas = ()=>{
-  metas.innerHTML += ` <div>
-  <span class="task-me">${data.text}</span>
-  <span class="date">${data.date}</span> 
-  <p>${data.description}</p>
-  <span class="opciones">
-      <i onClick ="editMeta(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-regular fa-pen-to-square"></i><i onClick = "deleteMeta(this)" class="fa-solid fa-trash-can"></i>
-  </span>
-  </div>`
+let createMetas = () => {
+  metas.innerHTML = ""
+  data.map((x,y)=>{
+    return (metas.innerHTML += ` <div id=${y}>
+    <span class="task-me">${x.text}</span>
+    <span class="date">${x.date}</span> 
+    <p>${x.description}</p>
+    <span class="opciones">
+        <i onClick ="editMeta(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-regular fa-pen-to-square"></i><i onClick = "deleteMeta(this);createMetas()" class="fa-solid fa-trash-can"></i>
+    </span>
+    </div>`)
+  })
 
   resetForm();
 }
 
 let deleteMeta = (e)=>{  
   e.parentElement.parentElement.remove ()
+  data.splice(e.parentElement.parentElement.id, 1)
+  localStorage.setItem("data", JSON.stringify(data))
+  console.log(data)
 }
 
 let editMeta = (e)=>{
@@ -65,7 +77,7 @@ let editMeta = (e)=>{
   fechaInput.value = selectedMeta.children[1].innerHTML
   textareaDescrip.value = selectedMeta.children[2].innerHTML
 
-  selectedMeta.remove()
+  deleteMeta(e)
 }
 
 let resetForm = () => {
@@ -73,3 +85,9 @@ let resetForm = () => {
   fechaInput.value = ""
   textareaDescrip.value = ""
 }
+
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || []
+  createMetas()
+  console.log(data)
+}) ()
