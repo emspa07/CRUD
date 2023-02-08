@@ -60,7 +60,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary">Agregar</button>
+          <button type="submit" id="agregar" class="btn btn-primary">Agregar</button>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
                 <span class="date">07-2-23</span> 
                 <p>Entrenamiento HITT en 30 min</p>
                 <span class="opciones">
-                    <i class="fa-regular fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i>
+                    <i onClick ="editMeta(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-regular fa-pen-to-square"></i><i onClick = "deleteMeta(this)" class="fa-solid fa-trash-can"></i>
                 </span>
                 </div>
                 <div>
@@ -81,7 +81,7 @@
                 <span class="date">07-2-23</span> 
                 <p>Entrenamiento HITT en 30 min</p>
                 <span class="opciones">
-                    <i class="fa-regular fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i>
+                    <i onClick ="editMeta(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-regular fa-pen-to-square"></i><i onClick = "deleteMeta(this)" class="fa-solid fa-trash-can"></i>
                 </span>   
                 </div>
             </div>
