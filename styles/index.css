@@ -53,9 +53,8 @@ main .to-doapp{
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    margin: 5rem auto;
     padding: 1rem;
-    border: 5px solid violet;
+    border: 5px solid #A5DBDD;
     border-radius: 8px;
     background-color: white;
 } 
@@ -104,6 +103,14 @@ main .text-task{
 }
 #message{
     color: red;
+}
+footer{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: rgb(30, 39, 46);
+    text-align: center;
+    background: #EEF1F6;
 }
 /* responsive media*/
 @media (min-width:240px) and (max-width:720px){
